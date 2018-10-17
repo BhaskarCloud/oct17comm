@@ -19,7 +19,7 @@ import com.paulhammant.ngwebdriver.ByAngular;
 /**
  * <p>
  * <br><b> Title: </b> AccountViewCommon.java</br>
- * <br><b> Description: </B> Common Page Object Library For Account View Pages</br> 
+ * <br><b> Description: </B> Common Page  Object Library For Account View Pages</br> 
  * <br><b>Usage:</B></br>
  * <br>1. homePageTabNavigation: Method to navigate to different tabs on Home Page. </br>
  * <br>2. subTabNavigation: Method to navigate to different sub tabs. </br>
