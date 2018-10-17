@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="CreateJars" name="QAAutoScriptsBuild">
+	<!--property name="project.name" value="ClientManagement"/>
+	<property name="package.path" value="Productline\ClientWorks"/-->
+	<target name="Init">
+		<delete dir="${basedir}\classes"/>
+		<mkdir dir="${basedir}\classes"/>
+		<delete dir="${basedir}\dist"/>
+		<mkdir dir="${basedir}\dist"/>
+	</target>
+	<target depends="Init" name="CreateClassPath">
+		<fileset dir="${basedir}\lib" id="jar.files">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathconvert pathsep=";" property="class.path" refid="jar.files"/>
+		<echo message="${class.path}"/>
+	</target>
+	<target depends="CreateClassPath" name="LPLCoreDriver">
+		<javac classpath="${class.path}" debug="on" destdir="${basedir}\classes" includeantruntime="false" source="1.7" target="1.7" srcdir="${basedir}\LPLCoreDriver\src">
+			<include name="**/*.java"/>
+		</javac>
+		<echo message="Completed compiling LPLCoreDriver classes!!!"/>
+		<jar basedir="${basedir}\classes" destfile="${basedir}\lib\LPLCoreDriver.jar"/>
+	</target>
+	<target depends="LPLCoreDriver" name="BranchNetCommon">
+		<javac classpath="${class.path};${basedir}\lib\LPLCoreDriver.jar;" debug="on" destdir="${basedir}\classes" includeantruntime="false" source="1.7" target="1.7" srcdir="${basedir}\BranchnetCommon\src">
+			<include name="**/*.java"/>
+		</javac>
+		<echo message="Completed compiling BranchNetCommon classes!!!"/>
+		<jar basedir="${basedir}\classes" destfile="${basedir}\lib\BNCommon.jar"/>
+	</target>
+    <target depends="BranchNetCommon" name="ClientWorksCommon">
+		<javac classpath="${class.path};${basedir}\lib\LPLCoreDriver.jar;${basedir}\lib\BNCommon.jar;" debug="on" destdir="${basedir}\classes" includeantruntime="false" source="1.7" target="1.7" srcdir="${basedir}\ClientWorksCommon\src">
+			<include name="**/*.java"/>
+		</javac>
+		<echo message="Completed compiling ClientWorksCommon classes!!!"/>
+		<jar basedir="${basedir}\classes" destfile="${basedir}\lib\CWCommon.jar"/>
+	</target>
+    <target depends="ClientWorksCommon" name="AppwayCommon">
+		<javac classpath="${class.path};${basedir}\lib\LPLCoreDriver.jar;${basedir}\lib\CWCommon.jar;${basedir}\lib\BNCommon.jar;" debug="on" destdir="${basedir}\classes" includeantruntime="false" source="1.7" target="1.7" srcdir="${basedir}\AppwayCommon\src">
+			<include name="**/*.java"/>
+		</javac>
+		<echo message="Completed compiling AllCommon classes!!!"/>
+		<jar basedir="${basedir}\classes" destfile="${basedir}\lib\AppwayCommon.jar"/>
+	</target>
+    <target depends="AppwayCommon" name="AllCommon">
+		<javac classpath="${class.path};${basedir}\lib\LPLCoreDriver.jar;${basedir}\lib\CWCommon.jar;${basedir}\lib\BNCommon.jar;${basedir}\lib\AppwayCommon.jar;" debug="on" destdir="${basedir}\classes" includeantruntime="false" source="1.7" target="1.7" srcdir="${basedir}\AccountViewCommon\src">
+			<include name="**/*.java"/>
+		</javac>
+		<echo message="Completed compiling AllCommon classes!!!"/>
+		<jar basedir="${basedir}\classes" destfile="${basedir}\lib\AVCommon.jar"/>
+	</target>
+	<target depends="AllCommon" name="CompileProject">
+		<javac classpath="${class.path};${basedir}\lib\LPLCoreDriver.jar;${basedir}\lib\AppwayCommon.jar;${basedir}\lib\AVCommon.jar;${basedir}\lib\BNCommon.jar;${basedir}\lib\CWCommon.jar;" debug="on" destdir="${basedir}\classes" includeantruntime="false" source="1.7" target="1.7" srcdir="${basedir}\${project.name}\src">
+			<include name="**/*.java"/>
+		</javac>
+		<echo message="Completed compiling ${project.name} classes!!!"/>
+	</target>
+	<target depends="CompileProject" name="DeleteTempJars">
+		<delete file="${basedir}\lib\LPLCoreDriver.jar"/>
+		<delete file="${basedir}\lib\CWCommon.jar"/>
+        <delete file="${basedir}\lib\BNCommon.jar"/>
+        <delete file="${basedir}\lib\AVCommon.jar"/>
+        <delete file="${basedir}\lib\AppwayCommon.jar"/>
+	</target>
+	<target depends="DeleteTempJars" name="UnjarExternalJars">
+		<unjar dest="${basedir}\classes">
+			<fileset dir="${basedir}\lib">
+				<include name="**/*.jar"/>
+			</fileset>
+		</unjar>
+	</target>
+	<target depends="UnjarExternalJars" name="CreateJars">
+		<copy todir="${basedir}\dist">
+			<fileset dir="${basedir}\classes\Scripts">
+				<include name="**/*.class"/>
+			</fileset>
+			<mapper type="glob" from="*.class" to="*" />
+		</copy>	
+		<apply executable="${basedir}\CreateJar.bat"> 
+			<srcfile /> 
+			<fileset dir="${basedir}\dist"/> 
+		</apply>
+		<delete>
+			<fileset dir="${basedir}\dist" excludes="**/*.jar"/>
+		</delete>
+	</target>
+</project>

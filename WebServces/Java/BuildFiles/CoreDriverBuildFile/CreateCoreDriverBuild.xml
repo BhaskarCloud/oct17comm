@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="CreateJars" name="QAAutoScriptsBuild">
+	<target name="Init">
+		<delete dir="${basedir}\classes"/>
+		<mkdir dir="${basedir}\classes"/>
+		<delete dir="${basedir}\dist"/>
+		<mkdir dir="${basedir}\dist"/>
+	</target>
+	<target depends="Init" name="CreateClassPath">
+		<fileset dir="${basedir}\lib" id="jar.files">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathconvert pathsep=";" property="class.path" refid="jar.files"/>
+		<echo message="${class.path}"/>
+	</target>
+
+	<target depends="CreateClassPath" name="CompileProject">
+		<javac classpath="${class.path}" debug="on" destdir="${basedir}\classes" includeantruntime="false" source="1.7" target="1.7" srcdir="${basedir}\${project.name}\src">
+			<include name="**/*.java"/>
+		</javac>
+		<echo message="Completed compiling ${project.name} classes!!!"/>
+	</target>
+
+	<target depends="CompileProject" name="CreateJars">
+		<copy todir="${basedir}\dist">
+			<fileset dir="${basedir}\classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<mapper type="glob" from="*.class" to="*" />
+		</copy>	
+		<apply executable="${basedir}\CreateCoreDriverJar.bat"> 
+			<srcfile /> 
+			<fileset dir="${basedir}\dist"/> 
+		</apply>
+		<delete>
+			<fileset dir="${basedir}\dist" excludes="**/*.jar"/>
+		</delete>
+	</target>
+</project>
