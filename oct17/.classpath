@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/AccountViewCommon.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/AppwayCommon.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/ASATCommon.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/BranchNetCommon.jar" sourcepath="/BranchnetCommon"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/cglib-nodep-3.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/ClientWorksCommon.jar" sourcepath="/ClientWorksCommon"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/com.dynatrace.diagnostics.automation.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/commons-lang3-3.5.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/commons-vfs2-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/cssparser-0.9.22.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/guava-21.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/htmlunit-2.26.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/htmlunit-core-js-2.26.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/htmlunit-driver-2.26.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/httpmime-4.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/javacsv.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/javax.servlet-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/jcifs-1.3.8.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/jetty-io-9.4.1.v20170120.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/jetty-util-9.4.1.v20170120.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/mysql-connector-java-5.0.8-bin.jar" sourcepath="/BTS624_UI/src/com/utility"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/neko-htmlunit-2.25.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/netty-3.5.7.Final.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/ngwebdriver-0.9.5.jar" sourcepath="C:/Users/akhatua/.m2/repository/com/paulhammant/ngwebdriver/0.9.5/ngwebdriver-0.9.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/ngwebdriver-0.9.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/okhttp-3.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/okio-1.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/opencsv-4.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/phantomjsdriver-1.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/platform.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/sac-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/serializer-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/testng-6.9.9.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/websocket-api-9.4.3.v20170317.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/websocket-client-9.4.3.v20170317.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/websocket-common-9.4.3.v20170317.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/xalan-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/selenium-server-standalone-3.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/FarmClient/TestDir/lib/json-20180813.jar"/>
+	<classpathentry kind="src" path="/WebServces"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/oct17F"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
